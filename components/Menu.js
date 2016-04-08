@@ -4,6 +4,7 @@ import Button from 'react-native-button';
 
 import styles from '../styles/menu'
 
+var _navigate;
 class Menu extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +13,7 @@ class Menu extends React.Component {
                 rowHasChanged: (row1, row2) => row1 !== row2
             })
         };
+        _navigate = this.props.navigate;
     }
 
     componentDidMount() {
@@ -27,7 +29,7 @@ class Menu extends React.Component {
     }
 
     _onItemSelect(item) {
-        // Add the code to push a scene in navigation stack, we’ll do it in a few
+        _navigate(item);
     }
 
     render() {
