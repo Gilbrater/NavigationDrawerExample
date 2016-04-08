@@ -4,14 +4,16 @@
  */
 
 import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry,
+    Component,
+    NavigatorIOS,
+    StyleSheet,
+    Text,
+    View
 } from 'react-native';
 
 import Drawer from 'react-native-drawer'
+import Home from './components/Home'
 import Menu from './components/Menu'
 
 class NavigationDrawerExample extends Component {
@@ -26,19 +28,22 @@ class NavigationDrawerExample extends Component {
             panCloseMask={0.2}
             closedDrawerOffset={-3}
             styles={{
-                    drawer: {shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
-                    main: {paddingLeft: 3}
+                drawer: {shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
+                main: {paddingLeft: 3}
             }}
             tweenHandler={(ratio) => ({
-                    main: { opacity:(2-ratio)/2 }
+                main: { opacity:(2-ratio)/2 }
             })}>
-            {/* Navigator component will be here, in the meantime add a view:*/}
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to React Native!
-                </Text>
-            </View>
-        </Drawer>
+            <NavigatorIOS
+                ref={(ref) => this._navigator = ref}
+                style={{flex: 1}}
+                initialRoute={{
+                    title: 'Home',
+                    component: Home,
+                    leftButtonIcon: require('./images/menu.png'),
+                    onLeftButtonPress: () => { this._drawer.open() }
+                }}/>
+            </Drawer>
     );
   }
 }
