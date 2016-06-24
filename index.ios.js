@@ -2,15 +2,8 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-
-import React, {
-    AppRegistry,
-    Component,
-    NavigatorIOS,
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry, NavigatorIOS, StyleSheet, Text, View } from 'react-native';
 
 import Drawer from 'react-native-drawer'
 import Home from './components/Home'

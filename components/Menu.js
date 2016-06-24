@@ -1,11 +1,12 @@
-import React, { ListView } from 'react-native';
+import React, { Component } from 'react';
+import { ListView } from 'react-native';
 
 import Button from 'react-native-button';
 
 import styles from '../styles/menu'
 
 var _navigate;
-class Menu extends React.Component {
+class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {

@@ -3,16 +3,8 @@
  * https://github.com/facebook/react-native
  */
 
-import React, {
-    AppRegistry,
-    BackAndroid,
-    Component,
-    Navigator,
-    StyleSheet,
-    ToolbarAndroid,
-    Text,
-    View
-} from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry, BackAndroid, Navigator, StyleSheet, ToolbarAndroid, Text, View } from 'react-native';
 
 import Drawer from 'react-native-drawer'
 import Menu from './components/Menu'
